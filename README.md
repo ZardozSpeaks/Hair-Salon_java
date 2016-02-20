@@ -2,7 +2,7 @@
 
 #### _{Brief description of application}, {Date of current version}_
 
-#### By _**{List of contributors}**_
+#### By _**David Remington**_
 
 ## Description
 
@@ -10,13 +10,13 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+* _Make sure you have the latest version of Java JRE installed_
+* _Mac users may have to enable Java in their System Preferences_
+* _Install gradle using Homebrew on OSx with the command $brew install gradle_
+* _Install gradle on Windows following the instructions at http://codetutr.com/2013/03/23/how-to-install-gradle? ._
+* _Clone this repository to your local machine_
+* _Run gradle from the root file in terminal(OSx) or cmd line(Windows)_
+* _Navigate to http://localhost:4567/ in your browser to view the app_
 
 ## Known Bugs
 
@@ -24,14 +24,14 @@ _{Are there issues that have not yet been resolved that you want to let users kn
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Contact me through GitHub at user ZardozSpeaks if you have any issues_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_Java, gradle, maven, spark, and velocity. FluentLenium and jUnit for testing_
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*Available under the MIT license*
 
-Copyright (c) 2015 **_{List of contributors or company name}_**
+Copyright (c) 2015 **_David Remington_**
