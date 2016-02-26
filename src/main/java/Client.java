@@ -1,5 +1,5 @@
-import org.sql2o.*
-import java.util.List
+import org.sql2o.*;
+import java.util.List;
 
 public class Client {
   private String name;
@@ -23,10 +23,10 @@ public class Client {
     }
   }
 
-  //GETER METHODS//
+  //GETTER METHODS//
 
   public int getId() {
-    return id
+    return id;
   }
 
   public String getName(){
@@ -41,7 +41,7 @@ public class Client {
     return stylist_id;
   }
 
-  //SETER METHODS//
+  //SETTER METHODS//
 
   public void setStylistId(int stylistId){
     stylist_id = stylistId;
@@ -58,7 +58,7 @@ public class Client {
   //CREATE //
 
   public void save() {
-    try(connnection con = DB.sql2o.open()) {
+    try(Connnection con = DB.sql2o.open()) {
       String sql = "INSERT INTO clients (name, age_group) VALUES (:name, :ageGroup)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name", this.name)
@@ -71,7 +71,7 @@ public class Client {
   //READ//
 
   public static List<Client> all() {
-    try(connection con DB.sql2o.open()) {
+    try(Connection con DB.sql2o.open()) {
       String sql = "SELECT * FROM clients";
       return con.createQuery().executeAndFetch(Client.class);
     }
@@ -80,7 +80,7 @@ public class Client {
   //FIND//
 
   public static int find(int id) {
-    try(connection con DB.sql2o.open()) {
+    try(Connection con DB.sql2o.open()) {
       String sql = "SELECT * FROM clients WHERE id = :id";
       return con.createQuery(sql)
         .addParameter("id", id)
@@ -89,18 +89,18 @@ public class Client {
   }
 
   public static List<Client> findByStylist(int stylistId) {
-    try(connection con DB.sql2o.open()) {
+    try(Connection con DB.sql2o.open()) {
       String sql = "SELECT * FROM clients where stylist_id =: stylist_id";
       return con.createQuery(sql)
         .addParameter("stylist_id", stylistId)
-        .executeAndFetch(Client.class)
+        .executeAndFetch(Client.class);
     }
   }
 
   //UPDATE//
 
-  public static void updateNewClient() {
-    try(connection con DB.sql.2o.open()) {
+  public void updateNewClient() {
+    try(Connection con DB.sql2o.open()) {
       String sql = "UPDATE clients SET client_id = :client_id WHERE id = :id";
       con.createQuery(sql)
         .addParameter("client_id", this.client_id)
@@ -109,8 +109,8 @@ public class Client {
     }
   }
 
-  public static void update() {
-    try(connection con DB.sql.2o.open()) {
+  public void update() {
+    try(Connection con DB.sql2o.open()) {
       String sql = "UPDATE clients SET name = :name, client_id = :client_id, age_group = :age_group WHERE id = :id";
       con.createQuery(sql)
         .addParameter("name", this.name)
@@ -124,13 +124,11 @@ public class Client {
   //DELETE//
 
   public void delete() {
-    try(connection con DB.sql2o.open()) {
+    try(Connection con DB.sql2o.open()) {
       String sql = "DELETE FROM clients WHERE id = :id";
       con.createQuery(sql)
         .addParameter("id", this.id)
         .executeUpdate();
     }
   }
-
-
 }
