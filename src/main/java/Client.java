@@ -80,7 +80,7 @@ public class Client {
 
     //FIND//
 
-    public static int find(int id) {
+    public static Client find(int id) {
       try(Connection con DB.sql2o.open()) {
         String sql = "SELECT * FROM clients WHERE id=:id";
         return con.createQuery(sql)

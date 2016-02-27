@@ -23,4 +23,36 @@ public class AppTest extends FluentTest {
 
   @ClassRule
   public static ServerRule server = new ServerRule();
+
+  @Test
+  public void rootTest() {
+    goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Joe's Barber Shop");
+  }
+
+  @Test
+  public void clients_AreDisplayed() {
+    Client testClient = new Client("Seymore Butts");
+    Client testClient2 = new Client("Amanda Hugginkiss");
+    testClient.save();
+    testClient2.save();
+    String indexPath = "http://localhost:4567/";
+    goTo(indexPath);
+    assertThat(pageSource()).contains("Seymore Butts");
+    assertThat(pageSource()).contains("Amanda Hugginkiss");
+  }
+
+  @Test
+  public void clients_CanBeAdded() {
+    Stylist testStylist = new Stylist("Billford");
+    testStylist.save();
+    String indexPath = "http://localhost:4567/";
+    String addClientPath = "http://localhost:4567/new-restaurant";
+    goTo(addClientPath);
+    fill("#client").with("Seymore Butts");
+    click("option",withText("Billford"));
+    click("#submit-client");
+    assertThat(pageSource()).contains("Seymore Butts");
+  }
+
 }
