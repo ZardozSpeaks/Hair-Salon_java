@@ -1,12 +1,12 @@
-# _{Application Name}_
+# _Hair Salon Client Manager_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _an app that helps in the management of day to day business in a hair salon_
 
 #### By _**David Remington**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This app allows the receptionist of a hair salon to edit client data and assign clients to stylists. It also allows for the user to edit client data and stylist data in the client database_
 
 ## Setup/Installation Requirements
 
@@ -20,7 +20,7 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_Currently experiencing an unknown gradle bug that causes compiler issues_
 
 ## Support and contact details
 
