@@ -1,4 +1,6 @@
 import org.fluentlenium.adapter.FluentTest;
+import static org.junitAssert.*;
+import org.junit.*;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +16,10 @@ public class AppTest extends FluentTest {
   public WebDriver getDefaultDriver() {
     return webDriver;
   }
+
+  @Rule
+  public DatabaseRule database = new DatabaseRule();
+
 
   @ClassRule
   public static ServerRule server = new ServerRule();

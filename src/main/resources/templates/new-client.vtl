@@ -1,0 +1,14 @@
+<h2>Add a client:</h2>
+
+<form action="/new-client" method="post">
+  <div class="form-group">
+    <input required placeholder="New Client Name" type="text" class="form-control" name="client" id="client">
+  </div>
+  <select required id="stylist" name="stylist" class="form-control" type="text">
+        <option value="" disabled="disabled" selected="true">Choose a Stylist</option>
+      #foreach($stylist in $stylists)
+        <option value="$stylist.getId()">$stylist.getStylistName()</option>
+      #end
+  </select>
+  <button id="submit-client" type="submit" class="btn btn-info">Submit</button>
+</form>
