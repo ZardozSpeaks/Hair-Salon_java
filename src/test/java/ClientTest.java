@@ -26,14 +26,14 @@ public class ClientTest {
     assertTrue(Client.all().get(0).equals(testClient));
   }
 
-  // @Test
-  // public void setStylistId_savesAStylistType() {
-  //   Client testClient = new Client("Bea O''Problem");
-  //   testClient.save();
-  //   testClient.setStylistId(1);
-  //   testClient.update();
-  //   assertTrue(Client.all().get(0).equals(testClient));
-  // }
+  @Test
+  public void setStylistId_savesAStylistType() {
+    Client testClient = new Client("Bea O''Problem");
+    testClient.save();
+    testClient.setStylistId(1);
+    testClient.update();
+    assertTrue(Client.all().get(0).equals(testClient));
+  }
 
   @Test
   public void find_returnsCorrectClient_True() {
