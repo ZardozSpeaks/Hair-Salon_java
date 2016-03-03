@@ -3,7 +3,7 @@
   <head>
     <title>Joe's Barber Shop</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="/css/app.css" type="text/css">
+    <link rel="stylesheet" href="/css/styles.css" type="text/css">
   </head>
   <body>
     <div class="container">
@@ -37,7 +37,12 @@
           </ul>
 
           <!-- Edit Database Control Panel -->
-          <a href="/new-client"><button class="btn btn-info">Add a Client</button></a>
+          <div class="btn-wrap">
+            <a href="/new-stylist"><button class="btn btn-info">Add a Stylist</button></a></br>
+          </div>
+          <div class="btn-wrap">
+            <a href="/new-client"><button class="btn btn-info">Add a Client</button></a>
+          </div>
         </div>
         <div id="right-col" class="col-md-6">
           #parse( $template )

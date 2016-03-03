@@ -36,7 +36,7 @@ public class StylistTest {
     testStylist2.save();
     testStylist3.save();
     Stylist savedStylist = Stylist.find(testStylist2.getId());
-    assertTrue(test.equals(savedStylist));
+    assertTrue(testStylist2.equals(savedStylist));
   }
 
   @Test

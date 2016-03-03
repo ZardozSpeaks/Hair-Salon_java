@@ -1,5 +1,5 @@
 import org.fluentlenium.adapter.FluentTest;
-import static org.junitAssert.*;
+import static org.junit.Assert.*;
 import org.junit.*;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -32,8 +32,8 @@ public class AppTest extends FluentTest {
 
   @Test
   public void clients_AreDisplayed() {
-    Client testClient = new Client("Seymore Butts");
-    Client testClient2 = new Client("Amanda Hugginkiss");
+    Client testClient = new Client("Seymore Butts", "senior");
+    Client testClient2 = new Client("Amanda Hugginkiss", "adult");
     testClient.save();
     testClient2.save();
     String indexPath = "http://localhost:4567/";
@@ -50,6 +50,7 @@ public class AppTest extends FluentTest {
     String addClientPath = "http://localhost:4567/new-restaurant";
     goTo(addClientPath);
     fill("#client").with("Seymore Butts");
+    click("option",withText("Senior(over 65)"));
     click("option",withText("Billford"));
     click("#submit-client");
     assertThat(pageSource()).contains("Seymore Butts");

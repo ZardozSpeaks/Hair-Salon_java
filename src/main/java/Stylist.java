@@ -53,7 +53,8 @@ public class Stylist {
   public static List<Stylist> all() {
     try (Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM stylists";
-      return con.createQuery(sql).executeAndFetch(Stylist.class);
+      return con.createQuery(sql)
+      .executeAndFetch(Stylist.class);
     }
   }
 
@@ -63,7 +64,7 @@ public class Stylist {
     try (Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM stylists WHERE id=:id";
       return con.createQuery(sql)
-        .addParameter("id", this.id)
+        .addParameter("id", id)
         .executeAndFetchFirst(Stylist.class);
     }
   }
@@ -71,7 +72,7 @@ public class Stylist {
   //UPDATE//
 
   public void update() {
-    try(Connection con DB.sql2o.open()) {
+    try(Connection con = DB.sql2o.open()) {
       String sql = "UPDATE stylists SET stylist_name = :stylist_name WHERE id = :id";
       con.createQuery(sql)
         .addParameter("stylist_name", this.stylist_name)
@@ -83,7 +84,7 @@ public class Stylist {
   //DELETE//
 
   public void delete() {
-    try(Connection con DB.sql2o.open()) {
+    try(Connection con = DB.sql2o.open()) {
       String sql = "DELETE FROM stylists WHERE id = :id";
       con.createQuery(sql)
         .addParameter("id", this.id)

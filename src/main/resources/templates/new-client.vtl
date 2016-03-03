@@ -4,11 +4,19 @@
   <div class="form-group">
     <input required placeholder="New Client Name" type="text" class="form-control" name="client" id="client">
   </div>
+  <select required id="age-group" name="age-group" class="form-control" type="text">
+    <option value="" disabled="disabled" selected="true">Choose your Age Group</option>
+    <option value="child">Child(under 12)</option>
+    <option value="adult">Adult</option>
+    <option value="senior">Senior(over 65)</option>
+  </select>
   <select required id="stylist" name="stylist" class="form-control" type="text">
         <option value="" disabled="disabled" selected="true">Choose a Stylist</option>
       #foreach($stylist in $stylists)
         <option value="$stylist.getId()">$stylist.getStylistName()</option>
       #end
   </select>
-  <button id="submit-client" type="submit" class="btn btn-info">Submit</button>
+  <div class="btn-wrap">
+    <button id="submit-client" type="submit" class="btn btn-info">Submit</button>
+  </div>
 </form>
